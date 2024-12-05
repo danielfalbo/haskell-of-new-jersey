@@ -23,3 +23,15 @@ A subset of Core Haskell features implemented in Standard ML
 - Currying
 - Partial Application
 - Partial Function Application
+- Closures
+- Tail Recursion
+- Higher Kinded Types
+- Rank N Types
+- Existential Types
+- GADTs
+- Type Families
+- Dependent Types
+- Phantom Types
+- Type Inference
+- Type Classes
+- Type Signatures
