@@ -6,7 +6,7 @@ datatype exp =
 
 type env = (string * exp) list
 
-val rec eval = fn (exp: exp, env: env) (* : int option * env *) => 
+val rec eval = fn (exp: exp, env: env) => 
     case exp of
         Const value => (SOME value, env)
       | Assign (key, expression) => (NONE, (key, expression) :: env)
@@ -34,23 +34,3 @@ val rec eval = fn (exp: exp, env: env) (* : int option * env *) =>
             end
         end
       )
-
-
-(* 
-    a program is a list of expressions recursively defined to run in the environment resulting from the previous expression
-
-    so an expression evaluates to an environment
-
-    an expression can be
-        an addition
-        an and
-        an or
-        a not
-        a variable assignment
-        a variable
-        a constant
-    
-    expressions can be evaluated
-        add: returns the evaluation of the first expression + the evaluation of the second expression
-
- *)
