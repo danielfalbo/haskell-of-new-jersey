@@ -5,7 +5,7 @@ eval(Const 4, []);
 let
     val (_, e) = eval(Assign("x", Add(Const 21, Const 21)), [])
 in 
-    eval(Const 88, e)
+    eval(Add(Const 2, Const 8), e)
 end;
 
 let
@@ -15,10 +15,9 @@ in
 end;
 
 
-(* eval(
-    Add(Const 4, Const 2),
-    []
-    (* assign("x", fn () => (print "Computing 21 + 21...\n"; 21 + 21)) *)
-) *)
 
-(* add("x", "x", assign("x", fn () => (print "Computing 21 + 21...\n"; 21 + 21))) *)
+let
+    val (_, e) = eval(Assign("x", Add(Const 21, Const 21)), [])
+in 
+    eval(Add(Var "x", Var "x"), e)
+end;
