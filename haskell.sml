@@ -14,7 +14,7 @@ val rec eval = fn (exp: exp, env: env) (* : int option * env *) =>
             case List.find (fn (k, _) => k = key) env of
                 SOME (_, value) => (
                     case eval(value, env) of
-                        (SOME v, e) => (SOME v, e)
+                        (SOME v, e) => (SOME v, (key, Const v) :: e)
                         | (NONE, e) => (NONE, e)
                 )
                 | NONE => (NONE, env)
