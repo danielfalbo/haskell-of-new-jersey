@@ -2,6 +2,11 @@
 
 A subset of Core Haskell features implemented in Standard ML
 
+## Get started without installing anything on your machine
+
+- [Online Haskell Playground](https://play.haskell.org/)
+- [Online Standard ML Playground](https://sosml.org/editor)
+
 ## Ideas
 
 - Lazy evaluation
