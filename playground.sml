@@ -2,7 +2,18 @@ use "haskell.sml";
 
 eval(Const 4, []);
 
-eval(Assign("x", Const 42), []);
+let
+    val (_, e) = eval(Assign("x", Add(Const 21, Const 21)), [])
+in 
+    eval(Const 88, e)
+end;
+
+let
+    val (_, e) = eval(Assign("x", Add(Const 21, Const 21)), [])
+in 
+    eval(Var "x", e)
+end;
+
 
 (* eval(
     Add(Const 4, Const 2),

@@ -19,7 +19,21 @@ val rec eval = fn (exp: exp, env: env) (* : int option * env *) =>
                 )
                 | NONE => (NONE, env)
         )
-      | Add (e1, e2) => (NONE, [])
+      | Add (a, b) => (
+        let 
+            val (a, e1) = eval(a, env)
+        in 
+            let 
+                val (b, e2) = eval(b, e1)
+            in 
+                case (a, b) of
+                    (SOME a, SOME b) => (SOME (a + b), e2)
+                    | (SOME a, NONE) => (SOME a, e2)
+                    | (NONE, SOME b) => (SOME b, e2)
+                    | (NONE, NONE) => (NONE, e2)
+            end
+        end
+      )
 
 
 (* 
