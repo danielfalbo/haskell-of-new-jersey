@@ -21,3 +21,15 @@ end;
 let val plusThree = fn x => Add(x, Const 3)
 in eval(plusThree(Const 2), [])
 end;
+
+eval(Div(Const 10, Const 2), []);
+
+eval(Div(Const 10, Const 3), []);
+
+let val (half) = fn x => Div(x, Const 2)
+in eval(half(half(Const 20)), [])
+end;
+
+let val (half) = fn x => Div(x, Const 2)
+in eval(half(half(Const 10)), [])
+end;
