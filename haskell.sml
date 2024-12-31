@@ -20,11 +20,9 @@ val rec eval = fn (exp: exp, env: env) =>
                 | NONE => (NONE, env)
         )
       | Add (a, b) => (
-        let 
-            val (a, e1) = eval(a, env)
+        let val (a, e1) = eval(a, env)
         in 
-            let 
-                val (b, e2) = eval(b, e1)
+            let val (b, e2) = eval(b, e1)
             in 
                 case (a, b) of
                     (SOME a, SOME b) => (SOME (a + b), e2)
