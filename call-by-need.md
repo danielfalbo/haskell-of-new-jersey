@@ -1,28 +1,27 @@
-```js
+```ts
+Infinity() { return Infinity() } // does not terminate
+
 callByValue(x, y) {
     print(x)
     print(y)
 }
 
+callByValue(10, Infinity()) // does not print anything and does not terminate
+
 callByName(x, y) {
     print(x)
+    print(y)
 }
 
-Infinity() { return Infinity() } // does not terminate
-```
+callByName(10, Infinity()) // prints 10 but then does not terminate
 
-`callByValue(10, Infinity())` does not print anything and does not terminate
-
-`callByName(10, Infinity())` prints 10 and terminates
-
-```js
 callByName(x) {
     print(x)
     print(x)
 }
-```
 
-`callByName(expensiveComputation())` runs the `expensiveComputation()` twice
+callByName(expensiveComputation()) // runs `expensiveComputation()` twice
+```
 
 ---
 
