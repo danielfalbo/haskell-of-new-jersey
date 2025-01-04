@@ -21,6 +21,7 @@ val rec eval = fn (exp: exp, env: env) =>
                 | NONE => (NONE, env)
         )
       | Add (a, b) => (
+        print("Evaluating Add\n");
         let val (a, e1) = eval(a, env)
         in 
             let val (b, e2) = eval(b, e1)
@@ -34,6 +35,7 @@ val rec eval = fn (exp: exp, env: env) =>
         end
       )
     | Div (a, b) => (
+        print("Evaluating Div\n");
         let val (a, e1) = eval(a, env)
         in 
             let val (b, e2) = eval(b, e1)
