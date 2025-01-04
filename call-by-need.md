@@ -59,4 +59,8 @@ and `body` is like a chain of expressions, evaluated in the resulting environmen
 
 ---
 
-`eval(Add(Var "x", Var "x"), [("x", Div(Const 10, Const 2))])` is a good example for call-by-need in our language.
+```js
+eval(Add(Var "x", Var "x"), [("x", Div(Const 10, Const 2))]);
+```
+
+is a good example for call-by-need in our language.
