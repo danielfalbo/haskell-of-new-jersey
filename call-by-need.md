@@ -7,9 +7,9 @@ callByValue(x, y) {
 callByName(x, y) {
     print(x)
 }
-```
 
-`Infinity()` does not terminate
+Infinity() { return Infinity() } // does not terminate
+```
 
 `callByValue(10, Infinity())` does not print anything and does not terminate
 
