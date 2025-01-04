@@ -3,9 +3,7 @@ callByValue(x, y) {
     print(x)
     print(y)
 }
-```
 
-```js
 callByName(x, y) {
     print(x)
 }
